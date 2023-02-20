@@ -4,7 +4,7 @@ class ExercisesController < ApplicationController
   end
 
   def exercise2
-    @shops = Shop.left_outer_joins(foods: :order_foods).distinct.where(foods: (order_foods: { id: nil }))
+    @shops = Shop.left_outer_joins(foods: :order_foods).distinct.where(foods: { order_foods: { id: nil } })
   end
 
   def exercise3 
